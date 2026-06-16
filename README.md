@@ -1,6 +1,6 @@
 # ai-network-traffic-analyzer
 
-##Architecture 
+## Architecture 
 
 ```mermaid
 flowchart LR
