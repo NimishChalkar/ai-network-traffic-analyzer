@@ -10,85 +10,35 @@ Architecture
 - Ubuntu ARM64 Sensor VM
 - Kali Linux ARM64 Attacker VM
 
-## Attack simulations and flows
+## Simulations and flows
 
-┌──────────────────────────────┐
-│         Kali Linux VM        │
-│                              │
-│ • Nmap Port Scan             │
-│ • Hydra SSH Brute Force      │
-│ • hping3 DoS Simulation      │
-└──────────────┬───────────────┘
-               │
-               │ Attack Traffic
-               ▼
-┌──────────────────────────────┐
-│        Ubuntu Sensor VM      │
-│                              │
-│ • tcpdump                    │
-│ • tshark                     │
-│ • Python Analytics Engine    │
-└──────────────┬───────────────┘
-               │
-               │ PCAP Capture
-               ▼
-┌──────────────────────────────┐
-│        PCAP Repository       │
-│                              │
-│ • normal.pcap                │
-│ • nmap_scan.pcap             │
-│ • hydra_attack.pcap          │
-│ • dos_attack.pcap            │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│        PyShark Parser        │
-│                              │
-│ Extracts:                    │
-│ • Source IP                  │
-│ • Destination IP             │
-│ • Protocol                   │
-│ • Packet Length              │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      Feature Extraction      │
-│                              │
-│ • Packet Count               │
-│ • Avg Packet Size            │
-│ • Total Bytes                │
-│ • Unique Destinations        │
-│ • Protocol Diversity         │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│    Isolation Forest Model    │
-│                              │
-│ • Train on Normal Traffic    │
-│ • Detect Anomalies           │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│     Detection & Mapping      │
-│                              │
-│ Port Scan  → T1046           │
-│ SSH BF     → T1110           │
-│ DoS        → T1498           │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│      Streamlit Dashboard     │
-│                              │
-│ • Alert Summary              │
-│ • Top Talkers                │
-│ • Anomalies                  │
-│ • MITRE ATT&CK Mapping       │
-└──────────────────────────────┘
+```mermaid
+flowchart TD
+
+    A["Kali Linux VM<br>Attack Simulation<br><br>• Nmap Port Scan<br>• Hydra SSH Brute Force<br>• hping3 DoS Simulation"]
+
+    B["Ubuntu Sensor VM<br>Traffic Collection<br><br>• tcpdump<br>• tshark<br>• Python Analytics Engine"]
+
+    C["PCAP Repository<br><br>• normal.pcap<br>• nmap_scan.pcap<br>• hydra_attack.pcap<br>• dos_attack.pcap"]
+
+    D["PyShark Parser<br><br>Extracts:<br>• Source IP<br>• Destination IP<br>• Protocol<br>• Packet Length"]
+
+    E["Feature Extraction<br><br>• Packet Count<br>• Avg Packet Size<br>• Total Bytes<br>• Unique Destinations<br>• Protocol Diversity"]
+
+    F["Isolation Forest Model<br><br>• Train on Normal Traffic<br>• Detect Network Anomalies"]
+
+    G["Threat Classification & MITRE ATT&CK Mapping<br><br>Port Scan → T1046<br>SSH Brute Force → T1110<br>DoS Attack → T1498"]
+
+    H["Streamlit Dashboard<br><br>• Alert Summary<br>• Top Talkers<br>• Anomaly Timeline<br>• MITRE ATT&CK Mapping<br>• Threat Severity Metrics"]
+
+    A -->|Attack Traffic| B
+    B -->|PCAP Capture| C
+    C -->|Packet Processing| D
+    D -->|Feature Generation| E
+    E -->|ML Input| F
+    F -->|Anomaly Detection| G
+    G -->|Visualization| H
+```
 
 ## Detection Techniques
 
