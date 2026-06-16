@@ -1,16 +1,6 @@
 # ai-network-traffic-analyzer
 
-Architecture 
-
-
-## Lab Environment
-
-- MacBook Pro M1
-- VMware Fusion
-- Ubuntu ARM64 Sensor VM
-- Kali Linux ARM64 Attacker VM
-
-## Simulations and flows
+##Architecture 
 
 ```mermaid
 flowchart LR
