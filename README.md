@@ -12,7 +12,7 @@ Architecture
 
 ## Simulations and flows
 
-```mermaid
+`mermaid
 flowchart TD
 
     A["Kali Linux VM<br>Attack Simulation<br><br>• Nmap Port Scan<br>• Hydra SSH Brute Force<br>• hping3 DoS Simulation"]
@@ -38,7 +38,7 @@ flowchart TD
     E -->|ML Input| F
     F -->|Anomaly Detection| G
     G -->|Visualization| H
-```
+`
 
 ## Detection Techniques
 
