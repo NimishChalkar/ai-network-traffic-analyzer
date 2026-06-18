@@ -1,0 +1,7 @@
+feature,importance
+packet_count,0.3046766980351862
+avg_packet_size,0.2464999094675282
+total_bytes,0.16956269709396138
+unique_ports,0.15136094491841015
+protocol_count,0.0732030562370778
+unique_destinations,0.05469669424783634

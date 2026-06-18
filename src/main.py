@@ -2,54 +2,21 @@ from parsers.pcap_parser import PcapParser
 from features.feature_extractor import FeatureExtractor
 from detection.anomaly_detector import AnomalyDetector
 from core.config import Config
+from detection.attack_classifier import AttackClassifier
+import pandas as pd
 
 
 def main():
 
-    parser = PcapParser(
-        Config.RAW_DATA /
-        "normal.pcap"
-    )
+    df = pd.read_csv("data/processed/dataset.csv")
 
-    packets = parser.parse()
+    print(f"Loaded dataset: {df.shape}")
 
-    extractor = (
-        FeatureExtractor()
-    )
+    classifier = AttackClassifier()
 
-    features = (
-        extractor.extract(
-            packets
-        )
-    )
+    classifier.train(df)
 
-    features.to_csv(
-
-        Config.FEATURES_FILE,
-
-        index=False
-
-    )
-
-    detector = (
-        AnomalyDetector()
-    )
-
-    detector.train(
-        features
-    )
-
-    predictions = (
-        detector.predict(
-            features
-        )
-    )
-
-    features[
-        "prediction"
-    ] = predictions
-
-    print(features)
+    classifier.save("data/models/attack_classifier.pkl")
 
 
 if __name__ == "__main__":
