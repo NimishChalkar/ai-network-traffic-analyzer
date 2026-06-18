@@ -1,6 +1,6 @@
 pandas
 numpy
-pyshark
+scapy
 scikit-learn
 streamlit
 joblib

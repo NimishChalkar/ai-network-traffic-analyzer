@@ -1,25 +1,14 @@
-from parsers.pyshark_parser import (
-    PysharkParser
-)
-
-from features.feature_extractor import (
-    FeatureExtractor
-)
-
-from detection.anomaly_detector import (
-    AnomalyDetector
-)
-
+from parsers.pcap_parser import PcapParser
+from features.feature_extractor import FeatureExtractor
+from detection.anomaly_detector import AnomalyDetector
 from core.config import Config
 
 
 def main():
 
-    parser = PysharkParser(
-
+    parser = PcapParser(
         Config.RAW_DATA /
         "normal.pcap"
-
     )
 
     packets = parser.parse()
