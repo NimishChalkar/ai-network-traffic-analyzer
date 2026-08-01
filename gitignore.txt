@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Raw packet captures
+data/raw/*.pcap
+data/raw/*.pcapng
+
+# Trained model binaries
+data/models/*.pkl
+data/models/*.joblib
+
+# Large/generated runtime outputs
+data/processed/dataset.csv
+data/processed/predictions.csv
+data/processed/alerts.csv
+data/processed/timeline.csv
+
+# Keep model evaluation artifacts for the portfolio
+!data/processed/classification_report.txt
+!data/processed/feature_importance.csv
+!data/processed/confusion_matrix.png
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp

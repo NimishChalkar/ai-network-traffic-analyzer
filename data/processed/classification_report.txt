@@ -1,0 +1,10 @@
+              precision    recall  f1-score   support
+
+         dos       0.97      0.97      0.97        35
+       hydra       0.74      0.86      0.79        36
+        nmap       0.40      0.88      0.55        24
+      normal       1.00      0.93      0.96       497
+
+    accuracy                           0.92       592
+   macro avg       0.78      0.91      0.82       592
+weighted avg       0.96      0.92      0.94       592
