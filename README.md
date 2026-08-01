@@ -4,7 +4,7 @@ An end-to-end network threat detection project that converts PCAP traffic into b
 
 ## Project Overview
 
-The lab simulates common network attacks from a Kali Linux VM against an Ubuntu sensor environment:
+In this lab, we simulate common network attacks from a Kali Linux VM against an Ubuntu sensor environment:
 
 - Nmap port scanning
 - Hydra SSH brute force
@@ -256,9 +256,7 @@ data/processed/timeline.csv
 
 ## Security and Data Handling
 
-The PCAP captures were generated in a controlled lab environment. Raw PCAP files, trained model binaries, Python cache files, and local virtual environments are excluded from version control.
-
-Do not upload captures containing confidential organizational traffic, credentials, private customer data, or sensitive public IP information.
+The PCAP captures were generated in a local virtual environment and the raw PCAP files, trained model binaries, Python cache files are excluded.
 
 ## Current Limitations
 
@@ -299,4 +297,4 @@ This project demonstrates practical experience with:
 
 ## Disclaimer
 
-This project is intended for educational and defensive-security purposes. Attack simulations should only be conducted in systems and networks that you own or are explicitly authorized to test.
+This project was intended for learning purposes. Attack simulations should only be conducted in systems and networks that you own or are explicitly authorized to test.
