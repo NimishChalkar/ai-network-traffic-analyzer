@@ -441,39 +441,6 @@ Streamlit application startup:
 
 ---
 
-# Installation
-
-```bash
-git clone https://github.com/YOUR-USERNAME/ai-network-traffic-analyzer.git
-cd ai-network-traffic-analyzer
-
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
----
-
-# Execution
-
-Run the workflow from the repository root:
-
-```bash
-# 1. Convert PCAP files into behavioural windows
-python3 -m src.data.data_builder
-
-# 2. Train and evaluate the Random Forest model
-python3 train.py
-
-# 3. Generate predictions, alerts, and incident timeline
-python3 -m src.main
-
-# 4. Launch the SOC dashboard
-python3 -m streamlit run dashboard.py
-```
-
----
-
 # Technology Stack
 
 - Python
@@ -524,9 +491,9 @@ python3 -m streamlit run dashboard.py
 
 # Security and Data Handling
 
-Raw PCAP captures and trained model binaries should remain excluded from version control.
+Raw PCAP captures and trained model binaries are excluded from version control.
 
-The screenshots document a controlled lab environment. Review and redact any IP addresses, usernames, paths, or other information you do not intend to publish before making the repository public.
+The screenshots document a controlled lab environment. All private IP addresses, usernames, paths and other information is also excluded for making the repository public.
 
 ---
 
