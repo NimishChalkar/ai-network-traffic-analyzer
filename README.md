@@ -484,7 +484,7 @@ Streamlit application startup:
 - Add analyst states such as New, Investigating, and Closed
 - Persist alerts in a database
 - Add continuous or near-real-time packet processing
-- Expand normal traffic and attack variants
+- Expand normal traffic and other attack variants
 - Add automated unit tests and CI validation
 
 ---
@@ -492,11 +492,11 @@ Streamlit application startup:
 # Security and Data Handling
 
 Raw PCAP captures and trained model binaries are excluded from version control.
-
 The screenshots document a controlled lab environment. All private IP addresses, usernames, paths and other information is also excluded for making the repository public.
 
 ---
 
 # Disclaimer
 
-This project is intended exclusively for educational and defensive-security purposes. Attack simulations must only be performed on systems and networks that you own or are explicitly authorized to test.
+This project is intended exclusively for educational and defensive-security purposes.
+Attack simulations must only be performed on systems and networks that you own or are explicitly authorized to test.
